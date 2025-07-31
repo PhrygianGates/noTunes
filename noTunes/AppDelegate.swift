@@ -81,6 +81,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if(runningApp.bundleIdentifier == "com.apple.Music") {
                     runningApp.forceTerminate()
                 }
+                if(runningApp.bundleIdentifier == "com.apple.TV") {
+                    runningApp.forceTerminate()
+                }
             }
         }
     }
@@ -93,6 +96,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     self.launchReplacement()
                 }
                 else if app.bundleIdentifier == "com.apple.iTunes" {
+                    app.forceTerminate()
+                    self.launchReplacement()
+                }
+                else if app.bundleIdentifier == "com.apple.TV" {
                     app.forceTerminate()
                     self.launchReplacement()
                 }
